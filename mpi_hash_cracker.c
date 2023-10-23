@@ -42,7 +42,7 @@ void decimal_to_base_k(long long int decimal_num, char* base_k_num) {
 }
 
 void start_hashing(char* processor_name, int world_rank, int world_size, char* testpass) {
-	int MAX_PASS_LENGTH = 6;
+	int MAX_PASS_LENGTH = 10;
 	long long int UPPER_LIMIT = pow(strlen(charset), MAX_PASS_LENGTH);
 
 	char base_k_num[200];

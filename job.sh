@@ -17,4 +17,4 @@ module load mpi
 make
 
 # run compiled test_mpi.c file
-mpirun ./mpi_hash_cracker
+mpirun ./mpi_hash_cracker password
