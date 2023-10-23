@@ -43,22 +43,22 @@ void decimal_to_base_k(long long int decimal_num, char* base_k_num) {
 }
 
 void start_hashing(char* processor_name, int world_rank, int world_size) {
-		int MAX_PASS_LENGTH = 6;
-		long long int UPPER_LIMIT = pow(strlen(charset), MAX_PASS_LENGTH);
+	int MAX_PASS_LENGTH = 6;
+	long long int UPPER_LIMIT = pow(strlen(charset), MAX_PASS_LENGTH);
 
-		char base_k_num[200];
-		long long int decimal_counter = world_rank;
+	char base_k_num[200];
+	long long int decimal_counter = world_rank;
 
-		printf("counter: %d\n", decimal_counter);
-		printf("Upper limit %d\n", UPPER_LIMIT);
-		while (decimal_counter < UPPER_LIMIT) {
-			decimal_to_base_k(decimal_counter, base_k_num);
-			if (strcmp(base_k_num, testpass) == 0) {
-				printf("%s found password is %s\n", processor_name, base_k_num);
-				break;
-			}
-			decimal_counter += world_size;
-		}	
+	printf("counter: %d\n", decimal_counter);
+	printf("Upper limit %d\n", UPPER_LIMIT);
+	while (decimal_counter < UPPER_LIMIT) {
+		decimal_to_base_k(decimal_counter, base_k_num);
+		if (strcmp(base_k_num, testpass) == 0) {
+			printf("%s found password is %s\n", processor_name, base_k_num);
+			break;
+		}
+		decimal_counter += world_size;
+	}	
 
 
 }
