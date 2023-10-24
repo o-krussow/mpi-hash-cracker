@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=mpi_test
-#SBATCH -o mpi_out%j.out
+#SBATCH -o out.out
 #SBATCH -N 15
 #SBATCH --ntasks-per-node=16
 

@@ -50,6 +50,8 @@ void start_hashing(char* processor_name, int world_rank, int world_size, char* t
 
 	while (decimal_counter < UPPER_LIMIT) {
 		decimal_to_base_k(decimal_counter, base_k_num);
+
+
 		if (strcmp(base_k_num, testpass) == 0) {
 			printf("%s found password is %s\n", processor_name, base_k_num);
 			break;
