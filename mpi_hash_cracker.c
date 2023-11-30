@@ -20,11 +20,6 @@ char *strrev(char *str)
       return str;
 }
 
-char get_character(int index) {
-	return charset[index];
-}
-
-
 void decimal_to_base_k(long long int decimal_num, char* base_k_num) {
 	int new_base = strlen(charset); //For readability sake 
 
@@ -34,7 +29,8 @@ void decimal_to_base_k(long long int decimal_num, char* base_k_num) {
 		decimal_num = decimal_num / new_base;
 		index++;
 	}
-	base_k_num[index] = get_character(decimal_num % new_base);
+	//Get character at index (decimal_num % new_base)
+	base_k_num[index] = charset[decimal_num % new_base];
 
 	strrev(base_k_num);
 
