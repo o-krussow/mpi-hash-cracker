@@ -13,8 +13,7 @@ hostname
 module load mpi
 
 # compile the C file
-#mpicc crack.c -o crack
 make
 
 # run compiled test_mpi.c file
-mpirun ./mpi_hash_cracker password
+mpirun ./mpi_hash_cracker cheek
