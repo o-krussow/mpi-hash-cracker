@@ -3,7 +3,7 @@
 #include <string.h>
 #include <mpi.h>
 
-char* charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char* charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./<>?;':";
 
 char *strrev(char *str)
 {
@@ -25,7 +25,7 @@ void decimal_to_base_k(long long int decimal_num, char* base_k_num) {
 
 	int index = 0;
 	while (decimal_num / new_base != 0) {
-		base_k_num[index] = get_character(decimal_num % new_base);
+		base_k_num[index] = charset[decimal_num % new_base];
 		decimal_num = decimal_num / new_base;
 		index++;
 	}
