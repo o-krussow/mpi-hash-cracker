@@ -2,7 +2,7 @@
 
 This is nowhere near as fast as something like hashcat, more a learning exercise than anything else.
 
-The main idea to this is converting from decimal numbers to base k numbers (where k is the length of the character set that we're using) so that we can arbitrarily "skip forward" different combinations of numbers. This makes it very easy to parallelize hashing combinations of characters across an arbitrary number of MPI slots/cores. This makes it very easy to use without any consideration of node symmetry or performance. Network latency/bandwidth doesn't become a bottleneck because the instances do not communicate with each other, so in theory this should scale up very linearly.
+The main idea to this is converting from decimal numbers to base k numbers (where k is the length of the character set that we're using) so that we can arbitrarily "skip forward" different combinations of numbers. This makes it very easy to parallelize hashing combinations of characters across an arbitrary number of MPI slots/cores, so we can use it with little to no consideration of node symmetry or performance. Network latency/bandwidth doesn't become a bottleneck because the instances do not communicate with each other, so in theory this should scale up very linearly.
 
 ## Build
 Make sure that your mpi implementation is loaded:
